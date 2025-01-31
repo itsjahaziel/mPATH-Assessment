@@ -1,2 +1,88 @@
-<h1>Welcome to {{ title }}!</h1>
-<p>This is your Angular app running successfully.</p>
+<div class="container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">Tech.Care</div>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Patients</a></li>
+        <li><a href="#">Overview</a></li>
+        <li><a href="#">Schedule</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Transactions</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="content">
+    <!-- Header -->
+    <header>
+      <h1>HealthCare Dashboard</h1>
+    </header>
+
+    <!-- Patient Info -->
+    <section class="patient-info">
+      <div class="profile-card">
+        <img src="https://via.placeholder.com/100" alt="Patient Profile" />
+        <div class="profile-details">
+          <h2>Jessica Taylor</h2>
+          <p>Date of Birth: August 23, 1996</p>
+          <p>Gender: Female</p>
+          <p>Contact Info: (415) 555-1234</p>
+          <p>Emergency Contacts: (415) 555-5678</p>
+          <p>Insurance Provider: Sunrise Health Assurance</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diagnostic History -->
+    <section class="diagnostic-history">
+      <h3>Diagnosis History</h3>
+      <canvas id="bpChart"></canvas>
+      <div class="stats-cards">
+        <div class="card">Respiratory Rate: 20 bpm</div>
+        <div class="card">Temperature: 98.6°F</div>
+        <div class="card">Heart Rate: 78 bpm</div>
+      </div>
+    </section>
+
+    <!-- Diagnostic List -->
+    <section class="diagnostic-list">
+      <h3>Diagnostic List</h3>
+      <table>
+        <tr>
+          <th>Problem/Diagnosis</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Hypertension</td>
+          <td>Chronic high blood pressure</td>
+          <td>Under Observation</td>
+        </tr>
+        <tr>
+          <td>Type 2 Diabetes</td>
+          <td>Insulin resistance and elevated blood sugar</td>
+          <td>Cured</td>
+        </tr>
+        <tr>
+          <td>Asthma</td>
+          <td>Recurrent episodes of bronchial constriction</td>
+          <td>Inactive</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Lab Results -->
+    <section class="lab-results">
+      <h3>Lab Results</h3>
+      <ul>
+        <li>Blood Tests <a href="#">⬇</a></li>
+        <li>CT Scans <a href="#">⬇</a></li>
+        <li>Radiology Reports <a href="#">⬇</a></li>
+        <li>X-Rays <a href="#">⬇</a></li>
+        <li>Urine Test <a href="#">⬇</a></li>
+      </ul>
+    </section>
+  </main>
+</div>
