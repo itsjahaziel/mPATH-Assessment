@@ -1,24 +1,39 @@
 import { Component } from "@angular/core";
-import { FormsModule } from "@angular/forms"; // Import FormsModule here
-import { CommonModule } from "@angular/common"; // Import CommonModule for ngIf
+import { Router } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: "app-login",
-  standalone: true,
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
-  imports: [CommonModule, FormsModule], // Include FormsModule and CommonModule
+  standalone: true,
+  imports: [CommonModule, FormsModule], // ✅ Fix for *ngIf and ngModel
 })
 export class LoginComponent {
   username: string = "";
   password: string = "";
   errorMessage: string = "";
 
-  onLogin() {
-    if (this.username && this.password) {
-      // Handle login logic here
+  constructor(private router: Router) {}
+
+  onSubmit() {
+    console.log("Login button clicked");
+    console.log("Username:", this.username);
+    console.log("Password:", this.password);
+
+    if (this.username === "admin" && this.password === "password123") {
+      console.log("Admin logged in!");
+      this.router.navigate(["/admin-dashboard"]);
+    } else if (this.username === "doctor" && this.password === "doctor123") {
+      console.log("Doctor logged in!");
+      this.router.navigate(["/doctor-dashboard"]);
+    } else if (this.username === "patient" && this.password === "patient123") {
+      console.log("Patient logged in!");
+      this.router.navigate(["/patient-dashboard"]);
     } else {
-      this.errorMessage = "Both fields are required.";
+      console.log("Invalid credentials");
+      this.errorMessage = "Invalid username or password";
     }
   }
 }
