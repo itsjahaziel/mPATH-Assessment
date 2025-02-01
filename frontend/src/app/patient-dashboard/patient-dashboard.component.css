@@ -1,0 +1,116 @@
+/* General Styling */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: "Arial", sans-serif;
+}
+
+/* Sidebar Styling (Always Visible) */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h2 {
+  text-align: center;
+  color: #008cba;
+  margin-bottom: 20px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar nav a {
+  padding: 10px;
+  text-decoration: none;
+  color: #008cba;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: rgba(0, 140, 186, 0.1);
+}
+
+.sidebar nav .logout {
+  color: red;
+  font-weight: bold;
+}
+
+/* Main Content Styling */
+.content {
+  flex: 1;
+  padding: 40px;
+  margin-left: 260px;
+  width: 100%;
+}
+
+.page-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Sections */
+.section {
+  margin-top: 20px;
+}
+
+/* Card-Like Tables */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th {
+  background: #008cba;
+  color: white;
+  padding: 10px;
+}
+
+table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+table tr:nth-child(even) {
+  background: #f8f9fa;
+}
