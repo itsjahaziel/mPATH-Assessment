@@ -1,13 +1,40 @@
 import { Component } from "@angular/core";
-import { CommonModule } from "@angular/common"; // Import CommonModule for ngIf
+import { Router } from "@angular/router";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-admin-dashboard",
-  standalone: true,
   templateUrl: "./admin-dashboard.component.html",
   styleUrls: ["./admin-dashboard.component.css"],
-  imports: [CommonModule], // Include CommonModule for ngIf
+  standalone: true,
+  imports: [CommonModule],
 })
 export class AdminDashboardComponent {
-  // Admin dashboard logic
+  activeTab: string = "users";
+
+  users = [
+    { name: "Jessica Taylor", role: "Patient", status: "Active" },
+    { name: "Dr. John Smith", role: "Doctor", status: "Active" },
+    { name: "Michael Johnson", role: "Patient", status: "Inactive" },
+  ];
+
+  logs = [
+    { user: "Admin", action: "Logged in", date: "Feb 10, 2025" },
+    {
+      user: "Dr. John Smith",
+      action: "Updated patient records",
+      date: "Feb 9, 2025",
+    },
+  ];
+
+  constructor(private router: Router) {}
+
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
+  }
+
+  logout() {
+    localStorage.removeItem("role");
+    this.router.navigate(["/login"]);
+  }
 }
