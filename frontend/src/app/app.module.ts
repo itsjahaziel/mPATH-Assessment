@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 
 // Import Angular Material Modules
@@ -10,28 +11,25 @@ import { MatListModule } from "@angular/material/list";
 import { MatCardModule } from "@angular/material/card";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatTableModule } from "@angular/material/table";
-import { CommonModule } from "@angular/common";
+
 // Import Components
 import { AppComponent } from "./app.component";
-import { PatientDashboardComponent } from "./patient-dashboard/patient-dashboard.component";
+import { AppRoutingModule } from "./app-routing.module"; // ✅ Ensure routing works properly
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CommonModule,
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
-    CommonModule,
     MatCardModule,
     MatTabsModule,
     MatTableModule,
-    RouterModule.forRoot([
-      { path: "", component: AppComponent },
-      { path: "patient-dashboard", component: PatientDashboardComponent },
-    ]),
+    AppRoutingModule, // ✅ Routing module imported properly
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent], // ✅ AppComponent is bootstrapped instead of declared
 })
 export class AppModule {}
