@@ -1,0 +1,15 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Angular build files
+dist/
+.angular/
+
+# Dotnet dependencies
+bin/
+obj/
+
+# Environment and config files
+.env

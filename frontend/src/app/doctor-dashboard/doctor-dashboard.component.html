@@ -1,0 +1,88 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Doctor Portal</h2>
+    <nav>
+      <a
+        [class.active]="activeTab === 'profile'"
+        (click)="setActiveTab('profile')"
+        >Profile</a
+      >
+      <a
+        [class.active]="activeTab === 'patients'"
+        (click)="setActiveTab('patients')"
+        >Patients</a
+      >
+      <a
+        [class.active]="activeTab === 'appointments'"
+        (click)="setActiveTab('appointments')"
+        >Appointments</a
+      >
+      <a class="logout" (click)="logout()">Logout</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+    <div class="page-container">
+      <!-- Profile Section -->
+      <div *ngIf="activeTab === 'profile'" class="profile-section">
+        <h2>Doctor Profile</h2>
+        <div class="profile-card">
+          <div class="profile-info">
+            <h3>{{ doctor.name }}</h3>
+            <p><strong>Specialization:</strong> {{ doctor.specialization }}</p>
+            <p><strong>Contact:</strong> {{ doctor.contact }}</p>
+            <p><strong>Email:</strong> {{ doctor.email }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Patients Section -->
+      <div *ngIf="activeTab === 'patients'" class="section">
+        <h2>Patients</h2>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Condition</th>
+                <th>Last Visit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let patient of patients">
+                <td>{{ patient.name }}</td>
+                <td>{{ patient.condition }}</td>
+                <td>{{ patient.lastVisit }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Appointments Section -->
+      <div *ngIf="activeTab === 'appointments'" class="section">
+        <h2>Appointments</h2>
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Patient</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let appointment of appointments">
+                <td>{{ appointment.date }}</td>
+                <td>{{ appointment.patient }}</td>
+                <td>{{ appointment.status }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
